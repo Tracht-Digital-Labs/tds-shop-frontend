@@ -30,6 +30,7 @@ npm run audit:geo -- <url>      # also audit:a11y, audit:mobile
 - No local radius, elevation, header, footer or sibling URL; use tds-shared and `siteLinks()`.
 - No `@astrojs/sitemap`, no `public/llms.txt`.
 - tds-shared is a minor-locked 0.x caret: a shared minor needs a repin and re-verification.
+- Follows the TDS quality standard (`../tds-ops/standards/quality.md`): no AI slop, clean code.
 
 ## Topic files
 

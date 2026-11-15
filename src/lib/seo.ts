@@ -67,7 +67,7 @@ const TITLE_BUDGET = 60;
 export function pageTitle(subject: string): string {
   const trimmed = subject.trim();
   if (trimmed === "") return site.name;
-  const combined = `${trimmed} — ${site.name}`;
+  const combined = `${trimmed} | ${site.name}`;
   if (combined.length <= TITLE_BUDGET) return combined;
   return trimmed;
 }

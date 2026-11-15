@@ -121,7 +121,7 @@ describe("the blend", () => {
     // about. Collect them from the @keyframes rules rather than a hand-kept
     // list, so a new animation cannot be added without failing here.
     const declared = [...code.matchAll(/@keyframes\s+([a-z-]+)/g)].map((m) => m[1]);
-    expect(declared.length, "no animations declared — delete this test").toBeGreaterThan(0);
+    expect(declared.length, "no animations declared, delete this test").toBeGreaterThan(0);
     expect(body).toMatch(/animation:\s*none/);
 
     // The row exit moves something. It must stop moving, not move faster.

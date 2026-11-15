@@ -76,7 +76,7 @@ try {
       console.log(`\n${path}  ${result.violations.length} violation(s)`);
       for (const v of result.violations) {
         violations += 1;
-        console.log(`  [${v.impact}] ${v.id} — ${v.help}`);
+        console.log(`  [${v.impact}] ${v.id}: ${v.help}`);
         console.log(`      ${v.helpUrl}`);
         for (const node of v.nodes.slice(0, 5)) {
           console.log(`      ${node.target.join(" ")}`);

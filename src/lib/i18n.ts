@@ -167,7 +167,7 @@ export const TX = {
     // "Sie", like the basket, the checkout and every legal text. This notice
     // used to say "du" and was the one line on the page that did.
     affiliateNotice:
-      "Einige Links auf dieser Seite sind Partnerlinks. Kaufen Sie darüber, erhalten wir eine Provision — am Preis ändert sich für Sie nichts.",
+      "Einige Links auf dieser Seite sind Partnerlinks. Kaufen Sie darüber, erhalten wir eine Provision, am Preis ändert sich für Sie nichts.",
     backToCatalogue: "Zurück zum Katalog",
     toCatalogue: "Zum Katalog",
     toJournal: "Zum Ratgeber",
@@ -208,7 +208,7 @@ export const TX = {
       shipping: "Versand",
       shippingFree: "kostenlos",
       shippingFrom: (amount: string) => `Versandkostenfrei ab ${amount}`,
-      digitalOnly: "Keine Lieferung nötig — sofortige Erbringung nach Zahlung.",
+      digitalOnly: "Keine Lieferung nötig, sofortige Erbringung nach Zahlung.",
       toCheckout: "Zur Kasse",
       view: "Warenkorb ansehen",
       keepShopping: "Weiter einkaufen",
@@ -300,7 +300,7 @@ export const TX = {
     atAGlance: "At a glance",
     providedBy: "Provided by",
     affiliateNotice:
-      "Some links on this page are affiliate links. If you buy through them we earn a commission — the price is the same for you.",
+      "Some links on this page are affiliate links. If you buy through them we earn a commission, the price is the same for you.",
     backToCatalogue: "Back to the catalogue",
     toCatalogue: "To the catalogue",
     toJournal: "To the Ratgeber",
@@ -333,7 +333,7 @@ export const TX = {
       shipping: "Delivery",
       shippingFree: "free",
       shippingFrom: (amount: string) => `Free delivery from ${amount}`,
-      digitalOnly: "Nothing to deliver — performed immediately after payment.",
+      digitalOnly: "Nothing to deliver, performed immediately after payment.",
       toCheckout: "Checkout",
       view: "View basket",
       keepShopping: "Keep shopping",

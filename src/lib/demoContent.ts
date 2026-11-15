@@ -39,14 +39,14 @@ const DEMO: Record<Lang, { slug: string; title: string; teaser: string; category
       slug: "beispiel-netzwerkspeicher",
       title: "Netzwerkspeicher fürs Büro",
       teaser:
-        "Beispieleintrag. Der Katalog ist gerade nicht erreichbar — sobald die Verbindung wieder steht, stehen hier die echten Produkte.",
+        "Beispieleintrag. Der Katalog ist gerade nicht erreichbar, sobald die Verbindung wieder steht, stehen hier die echten Produkte.",
       category: "netzwerk",
     },
     {
       slug: "beispiel-dokumentenscanner",
       title: "Dokumentenscanner für den Papierberg",
       teaser:
-        "Beispieleintrag. Der Katalog ist gerade nicht erreichbar — sobald die Verbindung wieder steht, stehen hier die echten Produkte.",
+        "Beispieleintrag. Der Katalog ist gerade nicht erreichbar, sobald die Verbindung wieder steht, stehen hier die echten Produkte.",
       category: "peripherie",
     },
   ],
@@ -55,14 +55,14 @@ const DEMO: Record<Lang, { slug: string; title: string; teaser: string; category
       slug: "example-network-storage",
       title: "Network storage for the office",
       teaser:
-        "Placeholder entry. The catalogue is currently unreachable — the real products appear here as soon as the connection is back.",
+        "Placeholder entry. The catalogue is currently unreachable, the real products appear here as soon as the connection is back.",
       category: "netzwerk",
     },
     {
       slug: "example-document-scanner",
       title: "Document scanner for the paper pile",
       teaser:
-        "Placeholder entry. The catalogue is currently unreachable — the real products appear here as soon as the connection is back.",
+        "Placeholder entry. The catalogue is currently unreachable, the real products appear here as soon as the connection is back.",
       category: "peripherie",
     },
   ],

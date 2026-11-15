@@ -86,7 +86,7 @@ describe("llms.txt", () => {
       ...input,
       products: [{ ...input.products[0]!, summary: "Zwei Sätze, die antworten." }],
     });
-    expect(text).toContain("— Zwei Sätze, die antworten.");
+    expect(text).toContain(": Zwei Sätze, die antworten.");
   });
 
   it("states no price at all", () => {
@@ -121,7 +121,7 @@ describe("llms.txt", () => {
     for (const slug of describedCategories) {
       if (!input.categories.some((c) => c.slug === slug && c.total > 0)) continue;
       // The first sentence of the category's own answer, not a generated one.
-      expect(llms, slug).toMatch(new RegExp(`\\*\\*[^*]+\\*\\* — `));
+      expect(llms, slug).toMatch(new RegExp(`\\*\\*[^*]+\\*\\*: `));
     }
   });
 });

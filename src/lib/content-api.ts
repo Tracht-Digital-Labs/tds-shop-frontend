@@ -43,7 +43,7 @@ async function readJson<T>(path: string, fallback: T, label: string): Promise<T>
     return await readContentJson<T>(`${contentApiBase()}${path}`);
   } catch (err) {
     if (err instanceof Error && err.name === "SiteKeyRejectedError") throw err;
-    console.warn(`[tds-shop] ${label} unreachable — serving fallback:`, err);
+    console.warn(`[tds-shop] ${label} unreachable, serving fallback:`, err);
     return fallback;
   }
 }
@@ -112,7 +112,7 @@ export async function getProduct(slug: string, lang: Lang): Promise<ProductPage 
     return withProductImage((await res.json()) as ProductPage);
   } catch (err) {
     if (err instanceof Error && err.name === "SiteKeyRejectedError") throw err;
-    console.warn(`[tds-shop] product ${slug} unreachable — serving fallback:`, err);
+    console.warn(`[tds-shop] product ${slug} unreachable, serving fallback:`, err);
     return demoProduct(slug, lang);
   }
 }

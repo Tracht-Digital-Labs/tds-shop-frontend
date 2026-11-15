@@ -61,7 +61,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${
   <text x="96" y="470" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="${MUTED}">${escape(DETAIL)}</text>
   <text x="96" y="566" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="${MUTED}">shop.tracht-digital.de</text>
   <!-- A paper tile under the mark. The logomark is navy, and navy on navy is
-       the mark being technically present and practically invisible — the same
+       the mark being technically present and practically invisible, the same
        trap the site's own dark surfaces have. Tinting the mark instead would
        alter the brand asset; giving it a ground does not. -->
   <rect x="${WIDTH - 316}" y="${(HEIGHT - 284) / 2}" width="284" height="284" rx="28" fill="${PAPER}"/>
@@ -77,4 +77,4 @@ const png = await sharp(Buffer.from(svg))
 
 writeFileSync(OUT, png);
 const { width, height } = await sharp(png).metadata();
-console.log(`og-default.png — ${width}x${height}, ${(png.length / 1024).toFixed(1)} KB`);
+console.log(`og-default.png: ${width}x${height}, ${(png.length / 1024).toFixed(1)} KB`);

@@ -128,7 +128,7 @@ export function renderLlmsTxt(input: LlmsInput): string {
     for (const category of withProducts) {
       const name = categoryName(category.slug, category.label);
       const answer = described("de", category.slug);
-      out(`- **${name}**${answer ? ` — ${answer.split(". ")[0]!}.` : ""}`);
+      out(`- **${name}**${answer ? `: ${answer.split(". ")[0]!}.` : ""}`);
       out(
         `  ${canonical(categoryPath(category.slug, "de"))}` +
           ` · EN ${canonical(categoryPath(category.slug, "en"))}`,
@@ -141,7 +141,7 @@ export function renderLlmsTxt(input: LlmsInput): string {
     out("## Leistungen und Produkte");
     out();
     for (const product of input.products) {
-      out(`- **${product.title}** — ${productLine(product.summary?.trim() || product.teaser)}`);
+      out(`- **${product.title}**: ${productLine(product.summary?.trim() || product.teaser)}`);
       out(`  ${canonical(productPath(product.slug, "de"))}`);
       // Never `/en/product/<german-slug>`: a product's English slug is its own,
       // and a dead link is worse than none in a file an assistant reads as
@@ -186,7 +186,7 @@ export function renderLlmsTxt(input: LlmsInput): string {
   out("- Die Seiten werden serverseitig gerendert; JSON-LD-Strukturdaten stehen im");
   out("  `<head>` jeder Seite. Jede Produktseite nennt ihr Stand-Datum.");
   out("- `Offer` trägt eine Produktseite nur für eigene Angebote mit aktuellem");
-  out("  Preis. Ein Partnerprodukt trägt `Product` ohne Preis — das ist Absicht und");
+  out("  Preis. Ein Partnerprodukt trägt `Product` ohne Preis, das ist Absicht und");
   out("  kein fehlender Wert.");
   out("- Es gibt keine Bewertungen und keine Testsiegel auf dieser Seite.");
   out("- Diese Datei wird aus demselben Katalog erzeugt wie die Seiten. Es gibt");

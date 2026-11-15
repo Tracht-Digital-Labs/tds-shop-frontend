@@ -1,7 +1,7 @@
 import { defineMiddleware, sequence } from "astro:middleware";
 
 import { siteCache } from "./lib/pageCache";
-import { guardSiteKey } from "@tracht-digital-solutions/tds-shared/site";
+import { guardSiteKey, withUtf8Charset } from "@tracht-digital-solutions/tds-shared/site";
 import { isNeverCached } from "./lib/noCache";
 
 /**
@@ -46,7 +46,11 @@ const refuseStaleKey = defineMiddleware((_context, next) => guardSiteKey(next as
  * to store it. Reversing the order would put a guard outside the cache, where
  * it would see hits it never rendered.
  */
+/** Outermost, so every response (cache hit or render) names its charset. */
+const utf8Charset = defineMiddleware(async (_context, next) => withUtf8Charset(await next()));
+
 export const onRequest = sequence(
+  utf8Charset,
   defineMiddleware((context, next) =>
     siteCache.middleware(
       {

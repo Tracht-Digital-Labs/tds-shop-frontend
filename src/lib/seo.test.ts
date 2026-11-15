@@ -160,7 +160,7 @@ describe("structured data", () => {
 
 describe("titles and descriptions", () => {
   it("keeps the brand when the whole title fits", () => {
-    expect(pageTitle("NAS mit vier Einschüben")).toBe("NAS mit vier Einschüben — Shop");
+    expect(pageTitle("NAS mit vier Einschüben")).toBe("NAS mit vier Einschüben | Shop");
   });
 
   it("drops the BRAND, never the subject, when it does not", () => {

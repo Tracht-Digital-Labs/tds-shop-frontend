@@ -41,7 +41,7 @@ const COPY: Record<string, Record<Lang, CategoryCopy>> = {
   netzwerk: {
     de: {
       answer:
-        "Hier stehen Geräte, die ein Betriebsnetz tragen: Router, Switches, Access Points und was sie verbindet. Ausgewählt für kleine Betriebe und Büros, in denen niemand eine eigene IT-Abteilung hat — also nach Einrichtungsaufwand und Nachkaufbarkeit, nicht nach Datenblattspitzen. Jede Einschätzung stammt von Julian Tracht und nicht aus dem Herstellertext.",
+        "Hier stehen Geräte, die ein Betriebsnetz tragen: Router, Switches, Access Points und was sie verbindet. Ausgewählt für kleine Betriebe und Büros, in denen niemand eine eigene IT-Abteilung hat, also nach Einrichtungsaufwand und Nachkaufbarkeit, nicht nach Datenblattspitzen. Jede Einschätzung stammt von Julian Tracht und nicht aus dem Herstellertext.",
       faq: [
         {
           q: "Wonach werden die Geräte hier ausgewählt?",
@@ -49,7 +49,7 @@ const COPY: Record<string, Record<Lang, CategoryCopy>> = {
         },
         {
           q: "Sind die Links hier Partnerlinks?",
-          a: "Ein Teil davon, und jeder einzelne ist als solcher gekennzeichnet — so verlangt es § 5a Abs. 4 UWG. Für dich ändert sich am Preis nichts. Welche Einträge wir selbst verkaufen, steht auf der jeweiligen Produktseite.",
+          a: "Ein Teil davon, und jeder einzelne ist als solcher gekennzeichnet, so verlangt es § 5a Abs. 4 UWG. Für dich ändert sich am Preis nichts. Welche Einträge wir selbst verkaufen, steht auf der jeweiligen Produktseite.",
         },
         {
           q: "Warum steht bei manchen Einträgen kein Preis?",
@@ -63,7 +63,7 @@ const COPY: Record<string, Record<Lang, CategoryCopy>> = {
     },
     en: {
       answer:
-        "This is the equipment a business network runs on: routers, switches, access points and what connects them. Chosen for small businesses and offices with no IT department of their own — so by how much setup they need and whether you can buy the same thing again, not by datasheet peaks. Every assessment is Julian Tracht's, not the vendor's copy.",
+        "This is the equipment a business network runs on: routers, switches, access points and what connects them. Chosen for small businesses and offices with no IT department of their own, so by how much setup they need and whether you can buy the same thing again, not by datasheet peaks. Every assessment is Julian Tracht's, not the vendor's copy.",
       faq: [
         {
           q: "How is the equipment here chosen?",
@@ -71,7 +71,7 @@ const COPY: Record<string, Record<Lang, CategoryCopy>> = {
         },
         {
           q: "Are these affiliate links?",
-          a: "Some of them, and every one is labelled as such — German law (§ 5a Abs. 4 UWG) requires it. The price is the same for you either way. Which entries we sell ourselves is stated on each product page.",
+          a: "Some of them, and every one is labelled as such: German law (§ 5a Abs. 4 UWG) requires it. The price is the same for you either way. Which entries we sell ourselves is stated on each product page.",
         },
         {
           q: "Why do some entries show no price?",
@@ -79,7 +79,7 @@ const COPY: Record<string, Record<Lang, CategoryCopy>> = {
         },
         {
           q: "Can you set the network up as well?",
-          a: "Yes — that is the actual work behind this catalogue. Planning, setup and support run through tracht-digital.de, with the scope agreed and quoted beforehand.",
+          a: "Yes, that is the actual work behind this catalogue. Planning, setup and support run through tracht-digital.de, with the scope agreed and quoted beforehand.",
         },
       ],
     },
@@ -87,7 +87,7 @@ const COPY: Record<string, Record<Lang, CategoryCopy>> = {
   peripherie: {
     de: {
       answer:
-        "Geräte, die am Arbeitsplatz hängen: Drucker und Scanner, Eingabegeräte, Bildschirme und Zubehör. Ausgewählt danach, was ein Arbeitstag mit ihnen aushält — Verbrauchskosten, Treiberpflege und ob sich das Gerät in einen bestehenden Ablauf einfügt. Die Einschätzung stammt von Julian Tracht.",
+        "Geräte, die am Arbeitsplatz hängen: Drucker und Scanner, Eingabegeräte, Bildschirme und Zubehör. Ausgewählt danach, was ein Arbeitstag mit ihnen aushält: Verbrauchskosten, Treiberpflege und ob sich das Gerät in einen bestehenden Ablauf einfügt. Die Einschätzung stammt von Julian Tracht.",
       faq: [
         {
           q: "Warum steht hier kein Drucker mit dem günstigsten Anschaffungspreis ganz oben?",
@@ -99,13 +99,13 @@ const COPY: Record<string, Record<Lang, CategoryCopy>> = {
         },
         {
           q: "Wer kümmert sich um Rückgabe oder Garantie?",
-          a: "Bei einem Partnerlink der Händler, bei dem du bestellst — dort gelten dessen Bedingungen. Was wir selbst verkaufen, ist auf der Produktseite als solches gekennzeichnet; dann sind wir der Vertragspartner.",
+          a: "Bei einem Partnerlink der Händler, bei dem du bestellst, dort gelten dessen Bedingungen. Was wir selbst verkaufen, ist auf der Produktseite als solches gekennzeichnet; dann sind wir der Vertragspartner.",
         },
       ],
     },
     en: {
       answer:
-        "The devices that sit on a desk: printers and scanners, input devices, monitors and accessories. Chosen for what a working day does to them — running costs, driver upkeep, and whether the device fits into a workflow that already exists. The assessment is Julian Tracht's.",
+        "The devices that sit on a desk: printers and scanners, input devices, monitors and accessories. Chosen for what a working day does to them, running costs, driver upkeep, and whether the device fits into a workflow that already exists. The assessment is Julian Tracht's.",
       faq: [
         {
           q: "Why is the cheapest printer not at the top?",
