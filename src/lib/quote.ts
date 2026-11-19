@@ -1,6 +1,6 @@
-import { formatPrice } from "@tracht-digital-solutions/tds-shared/format";
-import { displayPrice } from "@tracht-digital-solutions/tds-shared/schemas";
-import type { ShopProductRef } from "@tracht-digital-solutions/tds-shared/schemas";
+import { formatPrice } from "@tracht-digital-labs/tds-shared/format";
+import { displayPrice } from "@tracht-digital-labs/tds-shared/schemas";
+import type { ShopProductRef } from "@tracht-digital-labs/tds-shared/schemas";
 import type { Lang } from "./i18n";
 import { site } from "./seo";
 

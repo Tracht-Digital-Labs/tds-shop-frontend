@@ -11,7 +11,7 @@ import {
 } from "../lib/checkout";
 import { tx, type Lang } from "../lib/i18n";
 import { lookupReferral, refFromUrl } from "../lib/referral";
-import { apiBase } from "@tracht-digital-solutions/tds-shared/api";
+import { apiBase } from "@tracht-digital-labs/tds-shared/api";
 import ShippingRow from "./ShippingRow";
 import { useQuote } from "./useQuote";
 

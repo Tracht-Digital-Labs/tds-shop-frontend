@@ -1,8 +1,8 @@
 ---
-import { AccountMenu } from "@tracht-digital-solutions/tds-shared/islands/account-menu";
-import { ThemeToggle } from "@tracht-digital-solutions/tds-shared/islands/theme-toggle";
-import { translations } from "@tracht-digital-solutions/tds-shared/i18n";
-import { propertyContact, propertyNav } from "@tracht-digital-solutions/tds-shared/nav";
+import { AccountMenu } from "@tracht-digital-labs/tds-shared/islands/account-menu";
+import { ThemeToggle } from "@tracht-digital-labs/tds-shared/islands/theme-toggle";
+import { translations } from "@tracht-digital-labs/tds-shared/i18n";
+import { propertyContact, propertyNav } from "@tracht-digital-labs/tds-shared/nav";
 
 import { homePath, tx, type Lang } from "../lib/i18n";
 import { site } from "../lib/seo";
@@ -141,7 +141,7 @@ const cta = translations[lang].nav.cta;
 <script>
   // NOT `is:inline` — an inline script is not bundled, so this import would
   // reach the browser as a bare specifier.
-  import { mountAppHeader, mountPreferenceControls } from "@tracht-digital-solutions/tds-shared/app";
+  import { mountAppHeader, mountPreferenceControls } from "@tracht-digital-labs/tds-shared/app";
 
   const header = document.getElementById("site-header");
   if (header) {

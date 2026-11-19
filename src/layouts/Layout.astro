@@ -1,5 +1,5 @@
 ---
-import { serializeJsonLd } from "@tracht-digital-solutions/tds-shared/site";
+import { serializeJsonLd } from "@tracht-digital-labs/tds-shared/site";
 // The two font files the first paint needs, imported for their hashed URLs so
 // they can be preloaded (same pattern as the landingpage). Without it the body
 // face and the 800-weight display face arrived after first paint and swapped
@@ -14,9 +14,9 @@ import "@fontsource-variable/jetbrains-mono/index.css";
 
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import { API_BASE_META } from "@tracht-digital-solutions/tds-shared/api";
-import { consentBannerHostMarkup } from "@tracht-digital-solutions/tds-shared/dom";
-import { translations } from "@tracht-digital-solutions/tds-shared/i18n";
+import { API_BASE_META } from "@tracht-digital-labs/tds-shared/api";
+import { consentBannerHostMarkup } from "@tracht-digital-labs/tds-shared/dom";
+import { translations } from "@tracht-digital-labs/tds-shared/i18n";
 import {
   errorBounceScript,
   hoverTipScript,
@@ -25,7 +25,7 @@ import {
   pageTransitionOptIn,
   speculationRules,
   themeBootstrapScript,
-} from "@tracht-digital-solutions/tds-shared/astro";
+} from "@tracht-digital-labs/tds-shared/astro";
 import AppChrome from "../components/AppChrome.astro";
 import CartWiring from "../components/CartWiring.astro";
 
@@ -241,8 +241,8 @@ const image = ogImage ?? `${site.url}/og-default.png`;
     <CartWiring lang={lang} />
 
     <script>
-      import { startAccountPrefsSync } from "@tracht-digital-solutions/tds-shared/prefs";
-      import { registerServiceWorker } from "@tracht-digital-solutions/tds-shared/app";
+      import { startAccountPrefsSync } from "@tracht-digital-labs/tds-shared/prefs";
+      import { registerServiceWorker } from "@tracht-digital-labs/tds-shared/app";
       // Signed in? Theme and language follow the account to other devices.
       void startAccountPrefsSync();
       // Installable; catalogue pages stay readable offline (src/pages/sw.js.ts).
@@ -262,7 +262,7 @@ const image = ogImage ?? `${site.url}/og-default.png`;
         the banner below; withdrawing deletes the ids. The checkout form is
         marked, but only field NAMES travel — never what was typed. */}
     <script>
-      import { startAnalytics } from "@tracht-digital-solutions/tds-shared/analytics";
+      import { startAnalytics } from "@tracht-digital-labs/tds-shared/analytics";
 
       startAnalytics({
         site: "shop",
@@ -291,7 +291,7 @@ const image = ogImage ?? `${site.url}/og-default.png`;
       })}
     />
     <script>
-      import { mountConsentBannerHost } from "@tracht-digital-solutions/tds-shared/dom";
+      import { mountConsentBannerHost } from "@tracht-digital-labs/tds-shared/dom";
 
       mountConsentBannerHost();
     </script>

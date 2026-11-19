@@ -1,6 +1,6 @@
 ---
-import { formatPrice } from "@tracht-digital-solutions/tds-shared/format";
-import { displayPrice } from "@tracht-digital-solutions/tds-shared/schemas";
+import { formatPrice } from "@tracht-digital-labs/tds-shared/format";
+import { displayPrice } from "@tracht-digital-labs/tds-shared/schemas";
 import PriceMode from "./PriceMode.astro";
 import type { Lang } from "../lib/i18n";
 import { categoryName } from "../lib/i18n";
@@ -128,7 +128,7 @@ const zero = rows[0]?.currency ? formatPrice(0, rows[0].currency, lang) : "0 €
 }
 
 <script>
-  import { formatPrice } from "@tracht-digital-solutions/tds-shared/format";
+  import { formatPrice } from "@tracht-digital-labs/tds-shared/format";
 
   const dialog = document.querySelector<HTMLDialogElement>("[data-calc]");
   if (dialog && typeof dialog.showModal === "function") {

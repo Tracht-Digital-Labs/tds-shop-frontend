@@ -1,6 +1,6 @@
-import { imageRights } from "@tracht-digital-solutions/tds-shared/site";
+import { imageRights } from "@tracht-digital-labs/tds-shared/site";
 import type { CatalogProduct, ProductPage } from "./types";
-import { displayPrice } from "@tracht-digital-solutions/tds-shared/schemas";
+import { displayPrice } from "@tracht-digital-labs/tds-shared/schemas";
 
 import { canonical, site } from "./seo";
 import { productCategoryName, productPath, type Lang } from "./i18n";

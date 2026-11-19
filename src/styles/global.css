@@ -30,18 +30,18 @@
                 data — a teaser, an assessment, an offer list — each part
                 wanting its own treatment, not the descendants of one markdown
                 blob. Importing it would mean overriding it in three places. */
-@import "@tracht-digital-solutions/tds-shared/styles/base.css";
-@import "@tracht-digital-solutions/tds-shared/styles/primitives.css";
-@import "@tracht-digital-solutions/tds-shared/styles/surfaces/blog.css";
+@import "@tracht-digital-labs/tds-shared/styles/base.css";
+@import "@tracht-digital-labs/tds-shared/styles/primitives.css";
+@import "@tracht-digital-labs/tds-shared/styles/surfaces/blog.css";
 /* Cross-page fade between two pages of the shop — see the motion table in
    AGENTS.md for the question it answers. */
-@import "@tracht-digital-solutions/tds-shared/styles/page-transitions.css";
-@import "@tracht-digital-solutions/tds-shared/styles/app-shell.css";
+@import "@tracht-digital-labs/tds-shared/styles/page-transitions.css";
+@import "@tracht-digital-labs/tds-shared/styles/app-shell.css";
 
 /* Tailwind ignores node_modules by default, so the utility classes used inside
    the shared React components would never be generated. MUST come AFTER the
    @imports — @source before @import is a build error. */
-@source "../../node_modules/@tracht-digital-solutions/tds-shared";
+@source "../../node_modules/@tracht-digital-labs/tds-shared";
 
 /* --- the blend ----------------------------------------------------------
    THE SHOP IS THE JOURNAL'S SHOP, NOT A THIRD DESIGN.

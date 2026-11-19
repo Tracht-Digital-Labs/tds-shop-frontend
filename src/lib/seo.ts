@@ -1,4 +1,4 @@
-import { propertyHome } from "@tracht-digital-solutions/tds-shared/nav";
+import { propertyHome } from "@tracht-digital-labs/tds-shared/nav";
 
 import type { Lang } from "./i18n";
 
@@ -47,7 +47,7 @@ export const site = {
   logo: { url: "https://tracht-digital.de/images/logo.webp", width: 713, height: 483 },
   socials: [
     "https://www.linkedin.com/in/julian-tracht/",
-    "https://github.com/Tracht-Digital-Solutions",
+    "https://github.com/Tracht-Digital-Labs",
   ],
   description: {
     de: "Digitale Leistungen zum Festpreis für Selbstständige und kleine Betriebe: Website, SEO, E-Mail, Wartung und Schulung. Dazu Technik mit eigener Einschätzung.",

@@ -148,7 +148,7 @@ describe("the property bar", () => {
     // classes renders an unstyled row with nothing anywhere to say so.
     const shared = (rel: string) =>
       readFileSync(
-        fileURLToPath(new URL(`../../node_modules/@tracht-digital-solutions/tds-shared/${rel}`, import.meta.url)),
+        fileURLToPath(new URL(`../../node_modules/@tracht-digital-labs/tds-shared/${rel}`, import.meta.url)),
         "utf8",
       );
     expect(shared("styles/primitives.css")).toContain(".tds-sitebar__wide");

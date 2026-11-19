@@ -1,4 +1,4 @@
-import { renderMarkdown } from "@tracht-digital-solutions/tds-shared/markdown";
+import { renderMarkdown } from "@tracht-digital-labs/tds-shared/markdown";
 import { describe, expect, it } from "vitest";
 
 import {

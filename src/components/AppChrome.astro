@@ -10,8 +10,8 @@
  * categories (each leading to its category page) and the whole range; as
  * soon as something is typed it searches every product in place.
  */
-import { propertyContact, propertyNav } from "@tracht-digital-solutions/tds-shared/nav";
-import { translations } from "@tracht-digital-solutions/tds-shared/i18n";
+import { propertyContact, propertyNav } from "@tracht-digital-labs/tds-shared/nav";
+import { translations } from "@tracht-digital-labs/tds-shared/i18n";
 import { listAllProducts, listCategories } from "../lib/content-api";
 import { categoryName, categoryPath, homePath, productPath, tx, type Lang } from "../lib/i18n";
 import PriceMode from "./PriceMode.astro";
@@ -208,7 +208,7 @@ const c = de
 </style>
 
 <script>
-  import { mountAppTabBar, mountLiveFilter, mountPreferenceControls, mountTabPages, setTabBadge } from "@tracht-digital-solutions/tds-shared/app";
+  import { mountAppTabBar, mountLiveFilter, mountPreferenceControls, mountTabPages, setTabBadge } from "@tracht-digital-labs/tds-shared/app";
 
   const bar = document.getElementById("app-tabbar");
   if (bar) {

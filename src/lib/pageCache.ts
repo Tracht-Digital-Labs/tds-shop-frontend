@@ -1,4 +1,4 @@
-import { pageCache, resolveCacheDirs } from "@tracht-digital-solutions/tds-shared/cache";
+import { pageCache, resolveCacheDirs } from "@tracht-digital-labs/tds-shared/cache";
 
 import { alwaysPaths, cacheEvents, contentCache } from "./cache";
 import { connection } from "./connection";

@@ -4,7 +4,7 @@ import { publishedLegalSlugs } from "./legal";
 import { isIndexable } from "./indexing";
 import { productPairKey } from "./alternates";
 import { canonical } from "./seo";
-import { escapeXml, newestDay, renderSectionedSitemapIndex } from "@tracht-digital-solutions/tds-shared/site";
+import { escapeXml, newestDay, renderSectionedSitemapIndex } from "@tracht-digital-labs/tds-shared/site";
 import { SITEMAP_SECTIONS, sectionPath, type SitemapSection } from "./sitemapSections";
 
 /**

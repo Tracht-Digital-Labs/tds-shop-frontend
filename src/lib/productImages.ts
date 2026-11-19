@@ -1,7 +1,7 @@
 import catalog from './productImages.json';
 import type {CatalogProduct} from './types';
 import type {Lang} from './i18n';
-import {imageRights} from '@tracht-digital-solutions/tds-shared/site';
+import {imageRights} from '@tracht-digital-labs/tds-shared/site';
 
 interface ProductImage {slug:string;slugs:Record<Lang,string>;title:Record<Lang,string>;alt:Record<Lang,string>;width:number;height:number;src:string;digitalSourceType:string}
 export const productImageCatalog = catalog as Record<string,ProductImage>;

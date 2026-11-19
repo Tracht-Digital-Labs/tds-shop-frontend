@@ -14,7 +14,7 @@
     "type-check": "astro check",
     "test": "vitest",
     "test:run": "vitest run",
-    "postbuild": "node node_modules/@tracht-digital-solutions/tds-shared/scripts/pack-release.mjs",
+    "postbuild": "node node_modules/@tracht-digital-labs/tds-shared/scripts/pack-release.mjs",
     "start": "node app.cjs",
     "audit:a11y": "node scripts/a11y-audit.mjs",
     "audit:mobile": "node scripts/mobile-audit.mjs"
@@ -27,7 +27,7 @@
     "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
     "@fontsource/lato": "^5.2.7",
     "@tailwindcss/postcss": "^4.3.3",
-    "@tracht-digital-solutions/tds-shared": "^0.68.0",
+    "@tracht-digital-labs/tds-shared": "^0.68.0",
     "astro": "^7.2.5",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

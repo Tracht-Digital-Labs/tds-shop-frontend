@@ -1,4 +1,4 @@
-import { createImageCatalog } from "@tracht-digital-solutions/tds-shared/site";
+import { createImageCatalog } from "@tracht-digital-labs/tds-shared/site";
 import raw from "./imageCatalog.json";
 
 /** The generated editorial image catalogue (tds-shared helper). */

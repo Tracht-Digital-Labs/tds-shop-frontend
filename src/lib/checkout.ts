@@ -1,4 +1,4 @@
-import { apiBase } from "@tracht-digital-solutions/tds-shared/api";
+import { apiBase } from "@tracht-digital-labs/tds-shared/api";
 
 import type { CartLine } from "./cart";
 import { tx, type Lang } from "./i18n";
@@ -294,4 +294,4 @@ export async function getOrder(token: string): Promise<OrderView | null> {
 }
 
 /** The same price text the shared product card shows (tds-shared `formatPrice`). */
-export { formatPrice } from "@tracht-digital-solutions/tds-shared/format";
+export { formatPrice } from "@tracht-digital-labs/tds-shared/format";

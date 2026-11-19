@@ -1,4 +1,4 @@
-import { clampToWord } from "@tracht-digital-solutions/tds-shared/format";
+import { clampToWord } from "@tracht-digital-labs/tds-shared/format";
 
 /**
  * Meta descriptions, kept inside the range a search result renders whole.

@@ -2,7 +2,7 @@ import type {
   ShopOffer,
   ShopProduct,
   ShopProductRef,
-} from "@tracht-digital-solutions/tds-shared/schemas";
+} from "@tracht-digital-labs/tds-shared/schemas";
 
 /**
  * Repo-local widenings of the shared read model.
