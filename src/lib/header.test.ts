@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { describe, expect, it } from "vitest";
 
 import { categoryLabel } from "./i18n";
@@ -146,11 +146,14 @@ describe("the property bar", () => {
   it("resolves the bar in the INSTALLED tds-shared", () => {
     // A 0.x caret is minor-locked, and a pin below the version carrying these
     // classes renders an unstyled row with nothing anywhere to say so.
-    const shared = (rel: string) =>
-      readFileSync(
-        fileURLToPath(new URL(`../../node_modules/@tracht-digital-labs/tds-shared/${rel}`, import.meta.url)),
-        "utf8",
+    // A sheet's own partials are inlined: tds-shared splits its large sheets
+    // (`primitives.css` imports `./primitives/*.css`), so a rule can sit in one.
+    const shared = (rel: string): string => {
+      const file = fileURLToPath(new URL(`../../node_modules/@tracht-digital-labs/tds-shared/${rel}`, import.meta.url));
+      return readFileSync(file, "utf8").replace(/^@import "(\.\/[\w-]+\/[\w-]+\.css)";\r?$/gm, (_, partial: string) =>
+        readFileSync(new URL(partial, pathToFileURL(file)), "utf8"),
       );
+    };
     expect(shared("styles/primitives.css")).toContain(".tds-sitebar__wide");
     expect(shared("styles/primitives.css")).toContain(".tds-sitebar__island");
     expect(shared("styles/base.css")).toContain("--tds-product-grid-min:");
