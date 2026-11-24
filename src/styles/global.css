@@ -922,7 +922,7 @@
   margin: 0 0 1.5rem;
   padding: 0.875rem 1rem;
   background: var(--color-soft);
-  border-inline-start: 3px solid var(--color-accent);
+  border: var(--tds-border-hairline) solid var(--color-accent);
   font-size: 0.9375rem;
 }
 
@@ -1937,14 +1937,13 @@ button[data-add-to-cart][data-added="true"] {
 
 /* ── Product answer fields (tds-ext-shop ≥ 0.6) ───────────────────────────
    "Kurz gesagt" under the lede, the facts beside the price. The answer is a
-   soft-filled box with the brand's left rule, so it reads as THE answer and
-   not as one more paragraph; the facts are a quiet two-column list under the
-   offer card. Tokens only — no local radius or elevation. */
+   soft-filled box, so it reads as THE answer and not as one more paragraph;
+   the facts are a quiet two-column list under the offer card. Tokens only —
+   no local radius or elevation. */
 .shop-answer--product {
   margin: 1rem 0 1.25rem;
   padding: 0.875rem 1rem;
   background: var(--color-soft);
-  border-left: 3px solid var(--color-primary);
 }
 
 .shop-answer--product strong {
