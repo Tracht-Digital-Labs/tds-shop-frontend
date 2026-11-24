@@ -1837,11 +1837,6 @@ button[data-add-to-cart][data-added="true"] {
   .cart__line[data-leaving="true"] {
     transform: none;
   }
-
-  /* The product card's accent bar is NOT switched off here. It is declared in
-     the shared layer outside the motion query, with only its growth opted in,
-     so a reader with reduced motion already gets the affordance without the
-     travel. Repeating it here would be a second copy of that decision. */
 }
 
 /* === Hard 2D shadows (2026-09-22, tds-shared >= 0.42) =====================
