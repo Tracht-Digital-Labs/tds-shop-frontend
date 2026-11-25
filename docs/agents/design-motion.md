@@ -59,6 +59,13 @@ rows, because a separator between two small targets makes both worse.
 - Product page buy box: for a single offer the price is the column's largest figure and the action
   spans the box (`.tds-product-offer:only-of-type`); several affiliate offers keep the shared size.
   The column is deliberately not sticky: an affiliate aside can be taller than the window.
+- Product page with its own picture (`.shop-product--media`, 2026-11-25, after Shopify Dawn,
+  Gumroad, Envato): from `lg` picture left, head and buy box right, the description under the
+  picture (areas `media head / media offers / body offers`). Phone: head, picture, offers, body.
+  Without own artwork (partner image in the card) the old head/offers/body grid stays. The picture
+  takes the card treatment (tinted box, 4px band, hard offset), the facts share the card's fill,
+  the head opens with the category name and its swatch. Description lists use the swatch as marker
+  and numbered tinted squares for ordered steps; headings stay unnumbered.
 - Checkout: address and referral are heading-led groups without a frame; payment keeps its box and
   offset. Legends are floated so they sit inside the padding as headings. `.checkout label` (0,1,1)
   stacks every label as a column, so row labels need the qualified selector

@@ -253,9 +253,9 @@
 
 /* Local image composition; shared surfaces and controls keep their tokens. */
 .shop-editorial { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
-.shop-product__figure { margin: 1.5rem 0; }
+.shop-product__figure { grid-area: media; margin: 0; }
 .shop-product__figure img { display:block; width:100%; height:auto; aspect-ratio:16 / 9; object-fit:cover; }
-.shop-product__figure figcaption { margin-top:.5rem; font-size:.8125rem; color:var(--color-muted); }
+.shop-product__figure figcaption { margin-top:.625rem; font-size:.8125rem; color:var(--color-muted); }
 .shop-editorial--hero { aspect-ratio: 16 / 9; margin-bottom: 1.25rem; }
 .shop-editorial--shelf { aspect-ratio: 4 / 1; margin-bottom: 1.25rem; }
 .shop-soon__tile > .shop-editorial { margin-bottom: .75rem; }
@@ -1011,6 +1011,35 @@
   margin-top: 0.5rem;
 }
 
+/* With its own picture the phone order is head → picture → offers → body,
+   which is where the picture sat when it was the last block of the head. */
+.shop-product--media {
+  grid-template-areas:
+    "head"
+    "media"
+    "offers"
+    "body";
+}
+
+/* "Webauftritt" above the H1, with the category's square swatch. */
+.shop-product__kicker {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+}
+.shop-product__kicker::before {
+  content: "";
+  flex: none;
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-inline-end: 0.5rem;
+  background: var(--shop-cat, var(--color-line));
+}
+
 @media (min-width: 64rem) {
   .shop-product {
     grid-template-columns: minmax(0, 1fr) 22rem;
@@ -1019,6 +1048,28 @@
       "head offers"
       "body offers";
     align-items: start;
+  }
+
+  /* Picture left, decision right (2026-11-25, after Shopify's Dawn theme,
+     Gumroad and Envato's item page): the picture and the head share the
+     first screen, the buy box follows the head in the right column and the
+     description continues under the picture. Three rows, so the description
+     starts where the picture ends rather than below the whole right column;
+     a head taller than the picture simply pushes both down together. */
+  .shop-product--media {
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 26rem);
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "media head"
+      "media offers"
+      "body  offers";
+    row-gap: 2rem;
+  }
+  .shop-product--media .shop-product__head .shop-lede {
+    margin-bottom: 1rem;
+  }
+  .shop-product--media .shop-product__body {
+    padding-top: 0.5rem;
   }
 }
 
@@ -1030,6 +1081,12 @@
     grid-template-columns: minmax(0, 50rem) minmax(22rem, 26rem);
     column-gap: clamp(3rem, 4vw, 5rem);
     justify-content: start;
+  }
+  /* The picture column is wider than the reading measure: at 50rem a 16:9
+     picture stayed shorter than the head beside it. The description inside
+     it keeps `.shop-doc`'s own 44rem. */
+  .shop-product--media {
+    grid-template-columns: minmax(0, 56rem) minmax(24rem, 28rem);
   }
 }
 
@@ -2302,6 +2359,69 @@ button[data-add-to-cart][data-added="true"] {
    picture that does not fill the box sits on its own colour, not on grey. */
 :is(.shop-card-slot, .shop-filter-item, .shop-product)[data-category] .tds-product-card__media {
   background: color-mix(in srgb, var(--shop-cat, transparent) calc(var(--shop-cat-strength) + 6%), var(--shop-surface-card));
+}
+/* The product page's picture and its facts take the card's treatment: the
+   picture sits on its own colour with the band along the top, and the facts
+   share the offer card's fill, so card and facts read as one buy box rather
+   than a coloured card above a grey one. */
+.shop-product[data-category] .shop-product__figure picture {
+  display: block;
+  background: color-mix(in srgb, var(--shop-cat, transparent) calc(var(--shop-cat-strength) + 6%), var(--shop-surface-card));
+  border-top: 4px solid var(--shop-cat, transparent);
+  box-shadow: var(--tds-shadow-hard);
+}
+.shop-product[data-category] .shop-facts {
+  --shop-cat-fill: color-mix(in srgb, var(--shop-cat, transparent) var(--shop-cat-strength), var(--shop-surface-card));
+  --color-muted: color-mix(in srgb, var(--color-ink) 72%, var(--shop-cat-fill));
+  background-color: var(--shop-cat-fill);
+}
+/* The description's lists: the square swatch instead of a disc, and the
+   steps of "So läuft es ab" as numbers in a tinted square. A real sequence,
+   so the numbers carry content; headings stay unnumbered. */
+.shop-product[data-category] .shop-doc ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+.shop-product[data-category] .shop-doc ul > li {
+  position: relative;
+  padding-inline-start: 1.25rem;
+}
+.shop-product[data-category] .shop-doc ul > li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.6em;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--shop-cat, var(--color-accent));
+}
+.shop-product[data-category] .shop-doc ol {
+  list-style: none;
+  padding-inline-start: 0;
+  counter-reset: shop-step;
+}
+.shop-product[data-category] .shop-doc ol > li {
+  position: relative;
+  min-height: 1.75rem;
+  margin-bottom: 0.625rem;
+  padding-inline-start: 2.5rem;
+  counter-increment: shop-step;
+}
+.shop-product[data-category] .shop-doc ol > li::before {
+  content: counter(shop-step);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.875rem;
+  color: var(--color-ink);
+  background: color-mix(in srgb, var(--shop-cat, var(--color-accent)) calc(var(--shop-cat-strength) + 10%), var(--shop-surface-card));
+  border-top: 3px solid var(--shop-cat, var(--color-accent));
 }
 .shop-hero__cat[data-category]:is(:hover, :focus-visible) {
   --shop-cat-fill: color-mix(in srgb, var(--shop-cat, transparent) calc(var(--shop-cat-strength) + 8%), var(--shop-surface-card));

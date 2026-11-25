@@ -198,8 +198,12 @@ const revised = product.updatedAt
       assessment — someone who already knows the product should not have to
       scroll through our opinion to reach the price. Grid areas carry that
       reordering; the source order stays head → offers → assessment. */}
-  <div class="shop-product" data-category={product.category}>
+  <div class={artwork ? "shop-product shop-product--media" : "shop-product"} data-category={product.category}>
     <div class="shop-product__head">
+      {/* The category in its colour, the square swatch every other category
+          name in the shop carries. Text, not a link: the breadcrumb directly
+          above already links it. */}
+      <p class="shop-product__kicker">{categoryName}</p>
       <h1 class="shop-title">{product.title}</h1>
       <p class="shop-lede">{product.teaser}</p>
 
@@ -228,17 +232,22 @@ const revised = product.updatedAt
         </p>
       ) : null}
 
-      {artwork && (
-        <figure class="shop-product__figure">
-          <picture>
-            <source type="image/avif" srcset={productImageSrcset(artwork.src,'avif')} sizes={imageAttributes?.sizes}/>
-            <img src={product.imageUrl!} srcset={imageAttributes?.srcSet} sizes={imageAttributes?.sizes} alt={imageAttributes?.alt ?? ''} width={artwork.width} height={artwork.height} fetchpriority="high" decoding="async"/>
-          </picture>
-          <figcaption>{lang==='de' ? `Symbolbild zur Leistung „${product.title}“, KI-generiert.` : `AI-generated illustration of the service “${product.title}”.`}</figcaption>
-        </figure>
-      )}
       {hasAffiliate ? <p class="shop-disclosure">{t.affiliateNotice}</p> : null}
     </div>
+
+    {/* The picture has its own grid area: beside the head and the buy box from
+        `lg` (picture left, decision right, as product pages are read), between
+        the head and the offers on a phone. Not focusable, so placing it by
+        area changes no tab order. */}
+    {artwork && (
+      <figure class="shop-product__figure">
+        <picture>
+          <source type="image/avif" srcset={productImageSrcset(artwork.src,'avif')} sizes={imageAttributes?.sizes}/>
+          <img src={product.imageUrl!} srcset={imageAttributes?.srcSet} sizes={imageAttributes?.sizes} alt={imageAttributes?.alt ?? ''} width={artwork.width} height={artwork.height} fetchpriority="high" decoding="async"/>
+        </picture>
+        <figcaption>{lang==='de' ? `Symbolbild zur Leistung „${product.title}“, KI-generiert.` : `AI-generated illustration of the service “${product.title}”.`}</figcaption>
+      </figure>
+    )}
 
     {/* The offer list. `ProductCard` carries the advertising label and drops a
         price older than 24 hours by itself — this page decides neither. */}
